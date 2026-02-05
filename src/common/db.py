@@ -1,5 +1,3 @@
-#conexão com Postgres
-
 import os
 import json
 import psycopg2

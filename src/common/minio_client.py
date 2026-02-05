@@ -1,5 +1,3 @@
-#conexão com MinIO
-
 import os
 from datetime import date
 import boto3
@@ -23,7 +21,6 @@ def get_s3_client():
     )
 
 def ensure_bucket(s3, bucket: str):
-    # MinIO raises exception if bucket exists depending on config; we try and ignore.
     try:
         s3.head_bucket(Bucket=bucket)
     except Exception:
