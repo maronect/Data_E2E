@@ -1,0 +1,90 @@
+[0m12:41:01.415469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ee6e3d6ac60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ee6e3acb920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ee6e3b69100>]}
+
+
+============================== 12:41:01.420408 | e33a874a-ca58-4c0f-9981-b23126912c93 ==============================
+[0m12:41:01.420408 [info ] [MainThread]: Running with dbt=1.11.2
+[0m12:41:01.421514 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init engdados_dbt', 'warn_error': 'None', 'write_json': 'True', 'empty': 'None', 'static_parser': 'True', 'no_print': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/maron/.dbt', 'target_path': 'None', 'fail_fast': 'False', 'version_check': 'True', 'cache_selected_only': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'introspect': 'True', 'use_colors': 'True', 'printer_width': '80', 'debug': 'False', 'log_cache_events': 'False'}
+[0m12:41:01.439562 [info ] [MainThread]: Creating dbt configuration folder at /home/maron/.dbt
+[0m12:41:01.442469 [debug] [MainThread]: Starter project path: /home/maron/engdados/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m12:41:01.452966 [info ] [MainThread]: 
+Your new dbt project "engdados_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:41:01.453967 [info ] [MainThread]: Setting up your profile.
+[0m12:43:19.885160 [info ] [MainThread]: Profile engdados_dbt written to /home/maron/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:43:19.889558 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 145.56186, "process_in_blocks": "64", "process_kernel_time": 0.394166, "process_mem_max_rss": "103968", "process_out_blocks": "80", "process_user_time": 1.649377}
+[0m12:43:19.891359 [debug] [MainThread]: Command `dbt init` succeeded at 12:43:19.891044 after 145.56 seconds
+[0m12:43:19.892235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ee6e43508f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ee6e413ed80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ee6e39bb440>]}
+[0m12:43:19.893112 [debug] [MainThread]: Flushing usage events
+[0m12:43:20.886840 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:43:48.653588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc805e7b4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc805e78260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc805511100>]}
+
+
+============================== 12:43:48.657288 | 44574a60-eb50-468b-be48-7adee7a5c69d ==============================
+[0m12:43:48.657288 [info ] [MainThread]: Running with dbt=1.11.2
+[0m12:43:48.658084 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'empty': 'None', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'log_path': 'logs', 'warn_error': 'None', 'use_colors': 'True', 'write_json': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/maron/.dbt', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'fail_fast': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'log_format': 'default', 'printer_width': '80', 'no_print': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True'}
+[0m12:43:48.672695 [info ] [MainThread]: dbt version: 1.11.2
+[0m12:43:48.674074 [info ] [MainThread]: python version: 3.12.3
+[0m12:43:48.675499 [info ] [MainThread]: python path: /home/maron/engdados/.venv/bin/python3
+[0m12:43:48.676298 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m12:43:48.738896 [info ] [MainThread]: Using profiles dir at /home/maron/.dbt
+[0m12:43:48.739981 [info ] [MainThread]: Using profiles.yml file at /home/maron/.dbt/profiles.yml
+[0m12:43:48.740945 [info ] [MainThread]: Using dbt_project.yml file at /home/maron/engdados/dbt/dbt_project.yml
+[0m12:43:48.742119 [info ] [MainThread]: adapter type: postgres
+[0m12:43:48.742653 [info ] [MainThread]: adapter version: 1.10.0
+[0m12:43:48.743203 [info ] [MainThread]: Configuration:
+[0m12:43:48.743686 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:43:48.744275 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m12:43:48.744751 [info ] [MainThread]: Required dependencies:
+[0m12:43:48.745398 [debug] [MainThread]: Executing "git --help"
+[0m12:43:48.752073 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:43:48.752914 [debug] [MainThread]: STDERR: "b''"
+[0m12:43:48.753487 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:43:48.754185 [info ] [MainThread]: Connection:
+[0m12:43:48.754853 [info ] [MainThread]:   host: localhost
+[0m12:43:48.755472 [info ] [MainThread]:   port: 5432
+[0m12:43:48.756264 [info ] [MainThread]:   user: de_user
+[0m12:43:48.756812 [info ] [MainThread]:   database: de_db
+[0m12:43:48.757397 [info ] [MainThread]:   schema: analytics
+[0m12:43:48.757904 [info ] [MainThread]:   connect_timeout: 10
+[0m12:43:48.758738 [info ] [MainThread]:   role: None
+[0m12:43:48.759942 [info ] [MainThread]:   search_path: None
+[0m12:43:48.760791 [info ] [MainThread]:   keepalives_idle: 0
+[0m12:43:48.761802 [info ] [MainThread]:   sslmode: None
+[0m12:43:48.762569 [info ] [MainThread]:   sslcert: None
+[0m12:43:48.763263 [info ] [MainThread]:   sslkey: None
+[0m12:43:48.763983 [info ] [MainThread]:   sslrootcert: None
+[0m12:43:48.764561 [info ] [MainThread]:   application_name: dbt
+[0m12:43:48.765294 [info ] [MainThread]:   retries: 1
+[0m12:43:48.766153 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m12:43:48.895123 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m12:43:48.983207 [debug] [MainThread]: Using postgres connection "debug"
+[0m12:43:48.983672 [debug] [MainThread]: On debug: select 1 as id
+[0m12:43:48.984180 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:43:49.073653 [debug] [MainThread]: SQL status: SELECT 1 in 0.089 seconds
+[0m12:43:49.074839 [debug] [MainThread]: On debug: Close
+[0m12:43:49.075324 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:43:49.076033 [info ] [MainThread]: [31m1 check failed:[0m
+[0m12:43:49.076507 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/maron/engdados/dbt/dbt_project.yml> not found
+
+[0m12:43:49.077583 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.50027007, "process_in_blocks": "5632", "process_kernel_time": 0.410382, "process_mem_max_rss": "113140", "process_out_blocks": "32", "process_user_time": 1.740326}
+[0m12:43:49.078184 [debug] [MainThread]: Command `dbt debug` failed at 12:43:49.078033 after 0.50 seconds
+[0m12:43:49.078587 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:43:49.079053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc80915b410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc80432f500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc806dbac00>]}
+[0m12:43:49.079664 [debug] [MainThread]: Flushing usage events
+[0m12:43:49.626727 [debug] [MainThread]: An error was encountered while trying to flush usage events

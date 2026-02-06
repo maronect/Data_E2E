@@ -83,16 +83,16 @@ def main():
 
     print(f"[INFO] ingestion_date={ingestion_date.isoformat()} bucket={bucket}")
 
-    # 1) External source: products API
+    # Fonte externa c API de produtos
     print("[INFO] fetching products from API...")
     products = fetch_products()
     print(f"[INFO] products fetched: {len(products)}")
 
-    # 2) Internal-like sources: customers + orders (fake)
+    # Fonte interna: customers + orders (fake)
     customers = gen_customers(n=200)
     orders = gen_orders(customers, products, n=800, ingestion_date=ingestion_date)
 
-    # 3) Upload RAW files to lake
+    # Carrega arquivos crus no Lake
     print("[INFO] uploading raw files to MinIO...")
     prod_key = dated_key("raw/products", ingestion_date, "products.csv")
     cust_key = dated_key("raw/customers", ingestion_date, "customers.csv")
@@ -106,7 +106,7 @@ def main():
     print(f"[OK] uploaded: s3://{bucket}/{cust_key}")
     print(f"[OK] uploaded: s3://{bucket}/{ord_key}")
 
-    # 4) Insert into Postgres staging as JSONB
+    # Adiciona ao Postgres staging um JSONB
     print("[INFO] inserting into Postgres staging...")
     inserted_products = insert_json_rows("staging.products_raw", ingestion_date, products) if False else 0
     inserted_customers = insert_json_rows("staging.customers_raw", ingestion_date, customers)
