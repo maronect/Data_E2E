@@ -17,7 +17,6 @@ def fetch_products():
     r = requests.get(url, timeout=20)
     r.raise_for_status()
     products = r.json()
-    # Keep only key fields (good practice: don't store everything blindly)
     cleaned = []
     for p in products:
         cleaned.append({
@@ -108,12 +107,13 @@ def main():
 
     # Adiciona ao Postgres staging um JSONB
     print("[INFO] inserting into Postgres staging...")
-    inserted_products = insert_json_rows("staging.products_raw", ingestion_date, products) if False else 0
+    inserted_products = insert_json_rows("staging.products_raw", ingestion_date, products)
     inserted_customers = insert_json_rows("staging.customers_raw", ingestion_date, customers)
     inserted_orders = insert_json_rows("staging.orders_raw", ingestion_date, orders)
 
     print(f"[OK] inserted customers_raw: {inserted_customers}")
     print(f"[OK] inserted orders_raw: {inserted_orders}")
+    print(f"[OK] inserted products_raw: {inserted_products}")
 
     print("[DONE] ingestion pipeline completed.")
 
