@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: silver_customers
+    description: "Clientes tipados a partir do staging JSONB."
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+
+  - name: silver_products
+    description: "Produtos tipados a partir do staging JSONB."
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: title
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+
+  - name: silver_orders
+    description: "Pedidos tipados a partir do staging JSONB."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_customers')
+              field: customer_id
+
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_products')
+              field: product_id
+
+      - name: order_total
+        tests:
+          - not_null
+
+      - name: order_ts
+        tests:
+          - not_null
