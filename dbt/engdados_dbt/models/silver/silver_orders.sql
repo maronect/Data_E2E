@@ -5,6 +5,18 @@ with src as (
     from staging.orders_raw
 ),
 
+latest as (
+    select max(ingestion_date) as max_ingestion_date
+    from src
+),
+
+filtered as (
+    select s.*
+    from src s
+    join latest l
+      on s.ingestion_date = l.max_ingestion_date
+),
+
 typed as (
     select
         ingestion_date,
@@ -16,7 +28,7 @@ typed as (
         (payload ->> 'order_total')::numeric(12,2) as order_total,
         (payload ->> 'order_ts')::timestamp as order_ts,
         payload ->> 'payment_method' as payment_method
-    from src
+    from filtered
 )
 
 select *

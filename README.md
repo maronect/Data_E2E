@@ -88,16 +88,15 @@ Essa combinação simula um cenário realista, integrando:
 - [x] Pipeline de ingestão em Python
 - [x] Staging no Postgres com JSONB
 - [x] Configuração do dbt
-- [x] Criação dos primeiros models da camada Silver
+- [x] Criar camada Silver
+- [x] Criar camada Gold (Star Schema)
+- [x] Implementar testes de qualidade de dados (dbt tests)
+- [x] Orquestrar o pipeline (Airflow ou Prefect)
 
 ---
 
 ## 🚧 Próximas Etapas Planejadas
 
-- [ ] Finalizar camada Silver
-- [ ] Criar camada Gold (Star Schema)
-- [ ] Implementar testes de qualidade de dados (dbt tests)
-- [ ] Orquestrar o pipeline (Airflow ou Prefect)
 - [ ] Criar dashboards de BI
 - [ ] Realizar análise exploratória dos dados
 - [ ] Extensão para Ciência de Dados (opcional)
