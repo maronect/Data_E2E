@@ -24,3 +24,15 @@ def insert_json_rows(table: str, ingestion_date, rows: list[dict]):
             execute_values(cur, sql, values, page_size=1000)
         conn.commit()
     return len(rows)
+
+def delete_batch(table: str, ingestion_date):
+    """
+    apaga registros do mesmo ingestion_date antes de reinserir.
+    """
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"DELETE FROM {table} WHERE ingestion_date = %s", (ingestion_date,))
+        conn.commit()
+    finally:
+        conn.close()

@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from datetime import date, datetime, time
 
 from src.common.minio_client import get_s3_client, ensure_bucket, upload_bytes, dated_key
-from src.common.db import insert_json_rows
+from src.common.db import delete_batch, insert_json_rows
 
 fake = Faker("pt_BR")
 
@@ -107,13 +107,19 @@ def main():
 
     # Adiciona ao Postgres staging um JSONB
     print("[INFO] inserting into Postgres staging...")
-    inserted_products = insert_json_rows("staging.products_raw", ingestion_date, products)
-    inserted_customers = insert_json_rows("staging.customers_raw", ingestion_date, customers)
-    inserted_orders = insert_json_rows("staging.orders_raw", ingestion_date, orders)
+    delete_batch("staging.customers_raw", ingestion_date)
+    delete_batch("staging.orders_raw", ingestion_date)
+    delete_batch("staging.products_raw", ingestion_date)
 
-    print(f"[OK] inserted customers_raw: {inserted_customers}")
-    print(f"[OK] inserted orders_raw: {inserted_orders}")
+    inserted_products = insert_json_rows("staging.products_raw", ingestion_date, products)
     print(f"[OK] inserted products_raw: {inserted_products}")
+
+    inserted_customers = insert_json_rows("staging.customers_raw", ingestion_date, customers)
+    print(f"[OK] inserted customers_raw: {inserted_customers}")
+    
+    inserted_orders = insert_json_rows("staging.orders_raw", ingestion_date, orders)
+    print(f"[OK] inserted orders_raw: {inserted_orders}")
+
 
     print("[DONE] ingestion pipeline completed.")
 
